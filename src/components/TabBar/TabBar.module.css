@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  padding: 0 16px;
+  width: 100%;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.itemContainer {
+  height: 48px;
+  width: 88px;
+}
+
+.itemTextWrap {
+  width: 88px;
+  height: 46px;
+  color: #8e9398;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+.itemBorder {
+  width: 100%;
+  height: 2px;
+}
+
+.selectedItemBorder {
+  background-color: #000000;
+}
+
+.selectedItemTextWrap {
+  color: #000000;
+}
