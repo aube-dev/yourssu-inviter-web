@@ -40,14 +40,16 @@ const FormItem = ({
           className={styles.textArea}
         />
       ) : (
-        <input
-          value={value}
-          onInput={(e) => {
-            onTextChange?.(e.currentTarget.value);
-          }}
-          placeholder={placeholder}
-          className={styles.input}
-        />
+        <div>
+          <input
+            value={value}
+            onInput={(e) => {
+              onTextChange?.(e.currentTarget.value);
+            }}
+            placeholder={placeholder}
+            className={styles.input}
+          />
+        </div>
       )}
     </div>
   );
