@@ -1,0 +1,33 @@
+diff --git a/templates/_worker.js/index.ts b/templates/_worker.js/index.ts
+index 61b5a6f7b6fc3dee1c00ba47bea6e00f2b79ec96..c8aec2e3c52e994e05f96271fb8174ffe9e51231 100644
+--- a/templates/_worker.js/index.ts
++++ b/templates/_worker.js/index.ts
+@@ -142,7 +142,8 @@ export default {
+       }
+     }
+ 
+-    for (const { matchers, entrypoint } of Object.values(__FUNCTIONS__)) {
++    for (const [key, value] of Object.entries(__FUNCTIONS__)) {
++      const { matchers, entrypoint } = value;
+       let found = false;
+       for (const matcher of matchers) {
+         if (matcher.regexp) {
+@@ -158,10 +159,17 @@ export default {
+       }
+ 
+       if (found) {
+-        return entrypoint.default(request, context);
++        return entrypoint.default(cloneRequest(request, key), context);
+       }
+     }
+ 
+     return env.ASSETS.fetch(request);
+   },
+ } as ExportedHandler<{ ASSETS: Fetcher }>;
++
++function cloneRequest(request: Request, matchedPath: string): Request {
++  const clonedRequest = new Request(request);
++  clonedRequest.headers.set("x-matched-path", matchedPath);
++
++  return clonedRequest;
++}
