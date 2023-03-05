@@ -1,0 +1,15 @@
+.container {
+  border-radius: 8px;
+  border: 1px solid #000000;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background-color: #fcff59;
+  cursor: pointer;
+}
+
+.disabled {
+  background-color: #b5b9bd;
+}
