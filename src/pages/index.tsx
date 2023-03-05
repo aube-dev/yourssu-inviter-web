@@ -12,20 +12,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <TabBar
-        labels={[
-          'test1',
-          'test2',
-          'test3',
-          'test4',
-          'test5',
-          'test6',
-          'test7',
-          'test8',
-        ]}
-      />
-      <FormItem variant="large" label="테스트" placeholder="test" />
-      <FormItem variant="small" label="테스트2" placeholder="test2" />
     </>
   );
 }
