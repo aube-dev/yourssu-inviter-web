@@ -16,6 +16,7 @@
 .itemContainer {
   height: 48px;
   width: 88px;
+  cursor: pointer;
 }
 
 .itemTextWrap {

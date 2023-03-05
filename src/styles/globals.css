@@ -7,7 +7,6 @@
 html,
 body {
   max-width: 500px;
-  overflow-x: hidden;
   margin: auto;
   position: relative;
 }

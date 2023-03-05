@@ -4,6 +4,8 @@
 
 .header {
   background-color: #ffffff;
+  position: sticky;
+  top: 0px;
 }
 
 .topArea {

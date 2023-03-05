@@ -100,7 +100,9 @@ const InvitationFormTemplate = ({
             backgroundSize: 'cover',
           }}
         >
-          <Image alt="" src="/ic_camera_filled.svg" width={24} height={24} />
+          {!invitation.imageUrl && (
+            <Image alt="" src="/ic_camera_filled.svg" width={24} height={24} />
+          )}
           <input
             ref={imageInputRef}
             style={{ display: 'none' }}
